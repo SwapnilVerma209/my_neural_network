@@ -1,19 +1,9 @@
 #include "include/node.h"
 
-Node::Node(int numInputs) : inputs(nullptr), numInputs(numInputs),
-        nextAvailInputSlot(0), value(0.0) {
-    if (this->numInputs > 0) {
-        thinputs = 
-    }
-}
+Node::Node() {}
 
-void Node::addInput(Node *newInput) {
-    if (nextAvailInputSlot >= numInputs) {
-        return;
-    }
-    this->inputs[(this->nextAvailInputSlot)++] = newInput;
-}
+virtual Node::~Node() {}
 
-double Node::getValue() {
+double Node::getValue() const {
     return this->value;
 }

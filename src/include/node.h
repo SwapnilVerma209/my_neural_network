@@ -3,13 +3,10 @@
 
 class Node {
 public:
-    Node(int numInputs);
-    void addInput(Node *newInput);
-    double getValue();
+    Node();
+    virtual ~Node();
+    double getValue() const;
 protected:
-    Node** inputs;
-    int numInputs;
-    int nextAvailInputSlot;
     double value;
 };
 
