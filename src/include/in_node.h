@@ -1,17 +1,15 @@
 #ifndef MY_NEURAL_NETWORK_SRC_INCLUDE_IN_NODE_H_
 #define MY_NEURAL_NETWORK_SRC_INCLUDE_IN_NODE_H_
 
-#include <vector>
-
-#include "include/node.h"
+#include "node.h"
 
 class InNode : public Node {
 public:
     InNode(int numOutputs);
-    virtual ~InNode();
+    ~InNode();
     void setValue(double value);
     void addOutput(Node *newOutput);
-protected:
+private:
     int numOutputs;
     int nextOutputSlot;
     Node **outputs;

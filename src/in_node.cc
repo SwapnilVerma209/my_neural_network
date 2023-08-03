@@ -2,15 +2,16 @@
 #include "include/node.h"
 
 InNode::InNode(int numOutputs) : Node(), numOutputs(numOutputs),
-        nextOutputSlot(0) {
-    if (numOutputs <= 0) {
-        this->outputs = nullptr;
-    } else {
+        nextOutputSlot(0), outputs(nullptr) {
+    if (numOutputs > 0) {
         this->outputs = new Node *[numOutputs];
+        for (int i = 0; i < numOutputs; ++i) {
+            this->outputs[i] = nullptr;
+	}
     }	
 } 
 
-virtual InNode::~InNode() {
+InNode::~InNode() {
     delete [] outputs;
 }
 

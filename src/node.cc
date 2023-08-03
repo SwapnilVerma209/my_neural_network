@@ -1,8 +1,8 @@
 #include "include/node.h"
 
-Node::Node() {}
+Node::Node() : value(0.0) {}
 
-virtual Node::~Node() {}
+Node::~Node() {}
 
 double Node::getValue() const {
     return this->value;
